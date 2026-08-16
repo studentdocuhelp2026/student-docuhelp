@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student DocuHelp</title>
+
   <style>
     body {
       margin: 0;
@@ -13,20 +14,20 @@
     }
 
     header {
-      background: #0d47a1;
+      background: #1e3a8a;
       color: white;
-      padding: 25px 15px;
       text-align: center;
+      padding: 30px 15px;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 30px;
+      margin: 0 0 10px;
+      font-size: 32px;
     }
 
     header p {
-      margin: 8px 0 0;
-      font-size: 16px;
+      margin: 0;
+      font-size: 17px;
     }
 
     .container {
@@ -37,32 +38,48 @@
 
     .card {
       background: white;
-      padding: 20px;
-      margin: 15px 0;
+      margin-bottom: 20px;
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
     }
 
     .card h2 {
-      color: #0d47a1;
       margin-top: 0;
     }
 
-    .btn {
-      display: inline-block;
-      background: #0d47a1;
+    .card p {
+      line-height: 1.6;
+    }
+
+    button {
+      background: #1e3a8a;
       color: white;
-      padding: 10px 16px;
+      border: none;
+      padding: 12px 20px;
       border-radius: 7px;
-      text-decoration: none;
-      margin-top: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #162d6b;
+    }
+
+    .info {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #eef4ff;
+      border-radius: 8px;
+      line-height: 1.7;
     }
 
     footer {
       text-align: center;
-      background: #222;
+      padding: 25px;
+      background: #1e3a8a;
       color: white;
-      padding: 18px;
       margin-top: 30px;
     }
   </style>
@@ -79,20 +96,75 @@
 
     <div class="card">
       <h2>📄 Documents</h2>
-      <p>Aadhaar, PAN, Income Certificate, Caste Certificate aur anya important documents ki information.</p>
-      <a href="#" class="btn">Documents Dekhein</a>
+      <p>
+        Aadhaar, PAN, Income Certificate, Caste Certificate
+        aur anya important documents ki information.
+      </p>
+
+      <button onclick="showInfo('documents')">
+        Documents Dekhein
+      </button>
+
+      <div id="documents" class="info">
+        <strong>Important Documents:</strong>
+        <ul>
+          <li>Aadhaar Card</li>
+          <li>PAN Card</li>
+          <li>Income Certificate</li>
+          <li>Caste Certificate</li>
+          <li>Domicile Certificate</li>
+          <li>Character Certificate</li>
+          <li>Marksheet</li>
+        </ul>
+      </div>
     </div>
+
 
     <div class="card">
       <h2>📝 Forms</h2>
-      <p>Students ke liye important government aur education forms ki information.</p>
-      <a href="#" class="btn">Forms Dekhein</a>
+      <p>
+        Students ke liye important government aur
+        education forms ki information.
+      </p>
+
+      <button onclick="showInfo('forms')">
+        Forms Dekhein
+      </button>
+
+      <div id="forms" class="info">
+        <strong>Important Forms:</strong>
+        <ul>
+          <li>Scholarship Form</li>
+          <li>College Admission Form</li>
+          <li>Exam Form</li>
+          <li>Government Scheme Forms</li>
+          <li>Education Related Forms</li>
+        </ul>
+      </div>
     </div>
+
 
     <div class="card">
       <h2>📢 Important Information</h2>
-      <p>Admission, scholarship, exam aur government schemes se judi important information.</p>
-      <a href="#" class="btn">Information Dekhein</a>
+      <p>
+        Admission, scholarship, exam aur government schemes
+        se judi important information.
+      </p>
+
+      <button onclick="showInfo('information')">
+        Information Dekhein
+      </button>
+
+      <div id="information" class="info">
+        <strong>Important Information:</strong>
+        <ul>
+          <li>College Admission Updates</li>
+          <li>Scholarship Updates</li>
+          <li>Exam Updates</li>
+          <li>Government Scheme Updates</li>
+          <li>Student Related Notifications</li>
+        </ul>
+      </div>
     </div>
 
   </div>
@@ -100,6 +172,19 @@
   <footer>
     © 2026 Student DocuHelp
   </footer>
+
+
+  <script>
+    function showInfo(id) {
+      const box = document.getElementById(id);
+
+      if (box.style.display === "block") {
+        box.style.display = "none";
+      } else {
+        box.style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
